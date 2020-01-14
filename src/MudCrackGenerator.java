@@ -20,7 +20,7 @@ public class MudCrackGenerator {
         for (int i = 0; i < 3; i++) {
             Node node = new Node(new Point(random(400) + 50, random(400) + 50));
             Graph graph = startGraph(node);
-            preparePathTracer(graph, node, random((float) PI * 2), 5);
+            preparePathTracer(graph, node, random((float) PI * 2));
         }
         startNextPathTracers();
     }
@@ -29,8 +29,8 @@ public class MudCrackGenerator {
         return _graphList;
     }
 
-    void preparePathTracer(Graph graph, Node node, float angle, float speed) {
-        PathTracer pt = new PathTracer(graph, node, angle, speed);
+    void preparePathTracer(Graph graph, Node node, float angle) {
+        PathTracer pt = new PathTracer(graph, node, angle);
         _nextPathTracers.add(pt);
     }
 
@@ -89,7 +89,7 @@ public class MudCrackGenerator {
         Edge longestEdge = graph.getLongestEdge();
         Node midPointNode = new Node(longestEdge.getMidPoint());
         float newAngle = getNewAngle(longestEdge);
-        preparePathTracer(graph, midPointNode, newAngle, 5);
+        preparePathTracer(graph, midPointNode, newAngle);
     }
 
     void update() {

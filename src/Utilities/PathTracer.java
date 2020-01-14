@@ -12,7 +12,7 @@ public class PathTracer {
     private Vector _position;
     private Vector _velocity;
     private float _angle = 0;
-    private float _speed = 10;
+    private float _speed = (float) 4;
 
     public PathTracer(Graph graph, Node node) {
         _graph = graph;
@@ -24,10 +24,9 @@ public class PathTracer {
         _velocity.setAngle(_angle);
     }
 
-    public PathTracer(Graph graph, Node node, float angle, float speed) {
+    public PathTracer(Graph graph, Node node, float angle) {
         this(graph, node);
         _angle = angle;
-        _speed = speed;
         _velocity.setLength(_speed);
         _velocity.setAngle(_angle);
     }
@@ -42,7 +41,7 @@ public class PathTracer {
 
     public void createNextNode() {
         _lastNode = _currentNode;
-        _angle += 0.2 - random((float) 0.4);
+        _angle += 0.4 - random((float) 0.8);
         _velocity.setAngle(_angle);
         _position.addTo(_velocity.multiply(random(_speed / 3 * 2) + _speed / 3));
         _currentNode = new Node(_position.getPoint());

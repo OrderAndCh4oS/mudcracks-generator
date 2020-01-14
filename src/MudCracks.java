@@ -19,17 +19,19 @@ public class MudCracks extends PApplet {
 
     public void settings() {
         size((int) width, (int) height);
+        for (int i = 0; i < 1000; i++) {
+            mudCrackGenerator.update();
+        }
     }
 
     public void draw() {
         background(0xffffff);
-        mudCrackGenerator.update();
         drawGraphList(mudCrackGenerator.getGraphList());
     }
 
     void drawPoint(Point p) {
-        fill(0xffffff);
-        ellipse(p.x(), p.y(), 3, 3);
+//        fill(0xffffff);
+//        ellipse(p.x(), p.y(), 3, 3);
     }
 
     void drawEdge(Edge e) {

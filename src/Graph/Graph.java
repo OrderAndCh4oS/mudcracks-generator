@@ -118,7 +118,7 @@ public class Graph {
                 //       Navigate around the edges via the clockwise/anticlockwise most points
                 //       Either the edge will terminate at a node with a no more edges or it'll
                 //       Reach the starting node, at which point it's created a loop.
-                println(entry.getKey());
+//                println(entry.getKey());
             }
         }
     }
