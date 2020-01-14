@@ -123,6 +123,7 @@ public class Graph {
         }
     }
 
+
     // Todo: workout what's happening here
     public void splitLongestEdge() {
         if (_longestEdge == null) {
